@@ -16,7 +16,7 @@ import Button from '@mui/material/Button';
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 
- export const Header = ({props}:{props?:any})=> {
+export const Header = ({ props }: { props?: any }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -26,7 +26,7 @@ const navItems = ['Home', 'About', 'Contact'];
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Pytheas
       </Typography>
       <Divider />
       <List>
@@ -41,10 +41,9 @@ const navItems = ['Home', 'About', 'Contact'];
     </Box>
   );
 
-
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{ py: 1.5 }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -60,7 +59,7 @@ const navItems = ['Home', 'About', 'Contact'];
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            Pytheas
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
@@ -81,7 +80,10 @@ const navItems = ['Home', 'About', 'Contact'];
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+            },
           }}
         >
           {drawer}
@@ -89,4 +91,4 @@ const navItems = ['Home', 'About', 'Contact'];
       </Box>
     </Box>
   );
-}
+};
