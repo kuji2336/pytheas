@@ -2,7 +2,8 @@ import Europe from '../../public/europe.png';
 import Asia from '../../public/asia.png';
 import Afrika from '../../public/afrika.png';
 import Oceania from '../../public/oceania.png';
-import America from '../../public/America.png';
+import NAmerica from '../../public/nam.png';
+import SAmerica from '../../public/sam.png';
 
 export const continents = [
   {
@@ -27,7 +28,12 @@ export const continents = [
   },
   {
     id: 92223,
-    name: 'America',
-    image: America,
+    name: 'North America',
+    image: NAmerica,
+  },
+  {
+    id: 99283,
+    name: 'South America',
+    image: SAmerica,
   },
 ];

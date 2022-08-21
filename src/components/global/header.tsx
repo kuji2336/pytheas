@@ -12,7 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-
+import Image from 'next/image';
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 
@@ -33,7 +33,7 @@ export const Header = ({ props }: { props?: any }) => {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item} color="primary" />
             </ListItemButton>
           </ListItem>
         ))}
@@ -43,7 +43,7 @@ export const Header = ({ props }: { props?: any }) => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar component="nav" sx={{ py: 1.5 }}>
+      <AppBar component="nav" sx={{ py: 1, px:10 }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -59,11 +59,14 @@ export const Header = ({ props }: { props?: any }) => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            Pytheas
+            <Image src="/logo.png" height={80} width={80} alt="logo" />
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button
+                key={item}
+                sx={{ color: 'secondary.main', fontWeight: 800 }}
+              >
                 {item}
               </Button>
             ))}
